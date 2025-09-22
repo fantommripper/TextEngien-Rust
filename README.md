@@ -10,8 +10,6 @@ Welcome to **Text-Engine**, an ambitious project to create a powerful and flexib
 * **`egui` Interface**: The engine will use the powerful and easy-to-use `egui` library for its own interface, providing a modern and developer-friendly environment for managing your projects, assets, and debugging.
 * **Flexible Plugin System**: At the heart of our design is an incredibly flexible plugin system. This will allow developers to extend the engine's functionality with ease, creating a rich ecosystem of tools and features. Whether you want to add a new rendering backend or integrate a third-party service, the plugin system will make it possible.
 
----
-
 ## 🚀 Getting Started
 
 Currently, the project is in its early stages of development. The basic mod-loading and dependency resolution systems are in place, but there is still a long way to go. We are actively working on building out the core features and welcome any and all contributions.
@@ -22,8 +20,6 @@ Currently, the project is in its early stages of development. The basic mod-load
 * `mod_loader.rs`: Handles the loading and management of mods, including parsing `manifest.toml` files.
 * `dependency_resolver.rs`: A crucial component that resolves the loading order of mods based on their dependencies.
 * `python_api.rs`: The bridge between Rust and Python, allowing Python mods to interact with the engine's core.
-
----
 
 ## 🙏 A Humble Plea for Help
 
