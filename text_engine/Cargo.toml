@@ -1,0 +1,13 @@
+[package]
+name = "text_engine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+eframe = "0.32.3"
+egui = "0.32.3"
+legion = "0.4"
+toml = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+pyo3 = { version = "0.26", features = ["auto-initialize"] }
+pyo3-ffi = "0.26.0"
