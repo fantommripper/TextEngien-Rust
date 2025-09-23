@@ -8,11 +8,9 @@ pub struct LoadedMod {
 }
 
 pub fn resolve_dependencies(mods: Vec<LoadedMod>, strict: bool) -> Result<Vec<String>, Vec<String>> {
-    // сначала сортируем по load_order
     let mut mods = mods;
     mods.sort_by_key(|m| m.load_order);
 
-    // быстрый доступ: id → мод
     let mod_map: HashMap<String, &LoadedMod> =
         mods.iter().map(|m| (m.id.clone(), m)).collect();
 
@@ -85,7 +83,6 @@ pub fn resolve_dependencies(mods: Vec<LoadedMod>, strict: bool) -> Result<Vec<St
             Err(failed)
         }
     } else {
-        // мягкий режим: грузим всё, что получилось
         Ok(result)
     }
 }

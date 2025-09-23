@@ -43,7 +43,6 @@ pub fn load_mod(path: &Path, manifest: &Manifest) {
 pub fn load_all_mods(strict: bool) {
     let mods_dir = Path::new("./mods");
 
-    // Собираем все манифесты
     let mut manifests: HashMap<String, (Manifest, PathBuf)> = HashMap::new();
 
     for entry in fs::read_dir(mods_dir).expect("❌ Failed to read ./mods") {
@@ -59,7 +58,6 @@ pub fn load_all_mods(strict: bool) {
         }
     }
 
-    // Преобразуем в LoadedMod для резолвера
     let loaded_mods: Vec<LoadedMod> = manifests
         .iter()
         .map(|(_, (manifest, _))| LoadedMod {
@@ -69,7 +67,6 @@ pub fn load_all_mods(strict: bool) {
         })
         .collect();
 
-    // Резолвим порядок
     match resolve_dependencies(loaded_mods, strict) {
         Ok(order) => {
             println!("✅ Final load order: {:?}", order);

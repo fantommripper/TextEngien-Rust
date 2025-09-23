@@ -19,11 +19,9 @@ pub fn inite_module(){
 }
 
 pub fn run_python(file_path: &str) -> PyResult<()> {
-    // Читаем содержимое переданного файла
     let main_content = std::fs::read_to_string(file_path)
         .map_err(|e| PyErr::new::<pyo3::exceptions::PyIOError, _>(format!("Failed to read file: {}", e)))?;
 
-    // Получаем имя файла для имени модуля
     let file_name = std::path::Path::new(file_path)
         .file_name()
         .and_then(|f| f.to_str())
@@ -44,7 +42,6 @@ pub fn run_python(file_path: &str) -> PyResult<()> {
         .getattr("run")?
         .into();
 
-        // Предполагаем, что файл имеет функцию 'run'
         run_fn.call0(py)?;
         Ok(())
     })?;
