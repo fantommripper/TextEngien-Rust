@@ -31,7 +31,7 @@ fn load_manifest(path: &Path) -> Manifest {
         .expect("❌ Invalid manifest.toml")
 }
 
-pub fn load_mod(path: &Path, manifest: &Manifest) {
+fn load_mod(path: &Path, manifest: &Manifest) {
     println!("📦 Loading mod from {:?}", path);
     println!("✅ Loaded manifest: {:?}", manifest);
 
