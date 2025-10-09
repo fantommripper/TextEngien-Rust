@@ -82,7 +82,7 @@ def run():
     text_engien.add_dropdown_menu("settings_tab", "Settings", "🔧")
     text_engien.add_menu_item("settings_tab", "Settings", "General Settings", "open_settings", "🔧")
     text_engien.add_menu_item("settings_tab", "Settings", "Theme", "change_theme", "🎨")
-    
+
     # # Register buttons
     # text_engien.register_button("save_btn", "Save", "save_file", "💾")
     # text_engien.register_button("open_btn", "Open", "open_file", "📂")

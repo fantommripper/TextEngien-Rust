@@ -14,13 +14,6 @@ Welcome to **Text-Engine**, an ambitious project to create a powerful and flexib
 
 Currently, the project is in its early stages of development. The basic mod-loading and dependency resolution systems are in place, but there is still a long way to go. We are actively working on building out the core features and welcome any and all contributions.
 
-### Project Structure
-
-* `main.rs`: The entry point of the application, responsible for initializing the ECS and loading the core mods.
-* `mod_loader.rs`: Handles the loading and management of mods, including parsing `manifest.toml` files.
-* `dependency_resolver.rs`: A crucial component that resolves the loading order of mods based on their dependencies.
-* `python_api.rs`: The bridge between Rust and Python, allowing Python mods to interact with the engine's core.
-
 ## 🙏 A Humble Plea for Help
 
 You've read this far, which means you've seen the vision and the potential of this project. But let's be honest—right now, it's still very raw. There's a mountain of work to be done, and I can't do it alone.
