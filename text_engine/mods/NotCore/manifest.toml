@@ -1,0 +1,10 @@
+
+[mod_info]
+id = "not_core"
+name = "NotCore"
+version = "0.1.0"
+authors = ["Fantomm"]
+main = "main.py"
+load_order = 0
+
+[dependencies]

@@ -1,4 +1,4 @@
-use egui::{Context, Ui};
+use egui::{Context};
 use crate::python_bridge::registry::{REGISTERED_TABS, REGISTERED_BUTTONS};
 use crate::ui::components::{render_tab, render_buttons_group};
 

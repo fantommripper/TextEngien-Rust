@@ -2,6 +2,7 @@ use pyo3::prelude::*;
 use crate::python_bridge::types::*;
 use crate::python_bridge::registry::*;
 use crate::python_bridge::modification::*;
+use crate::python_bridge::window_api::*;
 
 // Main registration functions
 #[pyfunction]
@@ -113,6 +114,48 @@ fn text_engien(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(modify_menu_item, m)?)?;
     m.add_function(wrap_pyfunction!(remove_button, m)?)?;
     m.add_function(wrap_pyfunction!(modify_button, m)?)?;
+    
+    // Window management functions
+    m.add_function(wrap_pyfunction!(create_window, m)?)?;
+    m.add_function(wrap_pyfunction!(show_window, m)?)?;
+    m.add_function(wrap_pyfunction!(hide_window, m)?)?;
+    m.add_function(wrap_pyfunction!(set_window_position, m)?)?;
+    m.add_function(wrap_pyfunction!(set_window_size, m)?)?;
+    m.add_function(wrap_pyfunction!(set_window_resizable, m)?)?;
+    m.add_function(wrap_pyfunction!(set_window_collapsible, m)?)?;
+    m.add_function(wrap_pyfunction!(set_window_scroll, m)?)?;
+    
+    // UI element functions
+    m.add_function(wrap_pyfunction!(add_label, m)?)?;
+    m.add_function(wrap_pyfunction!(add_button, m)?)?;
+    m.add_function(wrap_pyfunction!(add_text_edit, m)?)?;
+    m.add_function(wrap_pyfunction!(add_checkbox, m)?)?;
+    m.add_function(wrap_pyfunction!(add_radio_button, m)?)?;
+    m.add_function(wrap_pyfunction!(add_slider, m)?)?;
+    m.add_function(wrap_pyfunction!(add_drag_value, m)?)?;
+    m.add_function(wrap_pyfunction!(add_combo_box, m)?)?;
+    m.add_function(wrap_pyfunction!(add_separator, m)?)?;
+    m.add_function(wrap_pyfunction!(add_spacing, m)?)?;
+    m.add_function(wrap_pyfunction!(add_heading, m)?)?;
+    m.add_function(wrap_pyfunction!(add_hyperlink, m)?)?;
+    m.add_function(wrap_pyfunction!(add_image, m)?)?;
+    m.add_function(wrap_pyfunction!(add_progress_bar, m)?)?;
+    m.add_function(wrap_pyfunction!(add_spinner, m)?)?;
+    m.add_function(wrap_pyfunction!(add_color_picker, m)?)?;
+    
+    // Value getter functions
+    m.add_function(wrap_pyfunction!(get_text_value, m)?)?;
+    m.add_function(wrap_pyfunction!(get_bool_value, m)?)?;
+    m.add_function(wrap_pyfunction!(get_float_value, m)?)?;
+    m.add_function(wrap_pyfunction!(get_combo_value, m)?)?;
+    m.add_function(wrap_pyfunction!(get_color_value, m)?)?;
+    
+    // Value setter functions
+    m.add_function(wrap_pyfunction!(set_text_value, m)?)?;
+    m.add_function(wrap_pyfunction!(set_bool_value, m)?)?;
+    m.add_function(wrap_pyfunction!(set_float_value, m)?)?;
+    m.add_function(wrap_pyfunction!(set_combo_value, m)?)?;
+    m.add_function(wrap_pyfunction!(set_color_value, m)?)?;
     
     // Utilities
     m.add_function(wrap_pyfunction!(print_to_console, m)?)?;
